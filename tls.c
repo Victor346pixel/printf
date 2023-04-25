@@ -75,7 +75,7 @@ long int change_number(long int cast, int dimention)
  *
  * Return: Cast
  */
-long int change_size(unsigned long int castr, int dimention)
+long int change_size(unsigned long int cast, int dimention)
 {
 	if (dimention == S_LONG)
 		return (cast0;
