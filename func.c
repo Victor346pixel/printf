@@ -165,7 +165,7 @@ int print_binary(va_list t, char buff[],
 	UNUSED(p);
 	UNUSED(s);
 
-	x = va_arg(types, unsigned int);
+	x = va_arg(t, unsigned int);
 	y = 2147483648; /* (2 ^ 31) */
 	a[0] = x / y;
 	for (i = 1; i < 32; i++)

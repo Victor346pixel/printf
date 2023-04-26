@@ -1,79 +1,41 @@
 #include "main.h"
 
 /**
-<<<<<<< HEAD
- * precision - Calculates the precision for printing
- * @formt: Formatted string  to print the arguments
- * @x:  arguments to be printed.
- * @lst: list of arguments.
+ * get_precision - Calculates the precision for printing
+ * @format: Formatted string in which to print the arguments
+ * @i: List of arguments to be printed.
+ * @list: list of arguments.
  *
  * Return: Precision.
  */
-int precision(const char *formt, int *x, va_list lst)
+int get_precision(const char *format, int *i, va_list list)
 {
-	int curr_x = *x + 1;
+	int curr_i = *i + 1;
 	int precision = -1;
 
-	if (formt[curr_x] != '.')
+	if (format[curr_i] != '.')
 		return (precision);
 
 	precision = 0;
 
-	for (curr_x += 1; formt[curr_x] != '\0'; curr_x++)
+	for (curr_i += 1; format[curr_i] != '\0'; curr_i++)
 	{
-		if (is_digit(formt[curr_x]))
+		if (is_digit(format[curr_i]))
 		{
 			precision *= 10;
-			precision += formt[curr_x] - '0';
+			precision += format[curr_i] - '0';
 		}
-		else if (formt[curr_x] == '*')
+		else if (format[curr_i] == '*')
 		{
-			curr_x++;
-			precision = va_arg(lst, int);
-=======
- * precision - Calculates the precision 
- * @frmt: Formats
- * @i: List of arguments
- * @ls: list of arguments.
- *
- * Return: Precision.
- */
-int precision(const char *frmt, int *i, va_list ls)
-{
-	int c = *i + 1;
-	int pr = -1;
-
-	if (frmt[c] != '.')
-		return (pr);
-
-	pr = 0;
-
-	for (c += 1; frmt[c] != '\0'; c++)
-	{
-		if (digit(frmt[c]))
-		{
-			pr *= 10;
-			pr += frmt[c] - '0';
-		}
-		else if (frmt[c] == '*')
-		{
-			c++;
-			pr = va_arg(ls, int);
->>>>>>> 544e8e663ee275ea50b6ede730a386beded26b4e
+			curr_i++;
+			precision = va_arg(list, int);
 			break;
 		}
 		else
 			break;
 	}
 
-<<<<<<< HEAD
-	*x = curr_x - 1;
+	*i = curr_i - 1;
 
 	return (precision);
 }
-=======
-	*i = c - 1;
-
-	return (pr);
-
->>>>>>> 544e8e663ee275ea50b6ede730a386beded26b4e

@@ -1,53 +1,26 @@
 #include "main.h"
 
 /**
-<<<<<<< HEAD
- * size - the size to cast the arguments is calculated
- * @formt: Formatted string  to print the arguments
- * @x: List of arguments to be printed.
- *
- * Return: Size
-*/
-int size(const char *formt, int *x)
-{
-	int curr_x = *x + 1;
-	int size = 0;
-
-	if (formt[curr_x] == 'l')
-		size = S_LONG;
-	else if (formt[curr_x] == 'h')
-		size = S_SHORT;
-
-	if (size == 0)
-		*x = curr_x - 1;
-	else
-		*x = curr_x;
-
-	return (size);
-}
-=======
- * size - Calculates the size t
- * @frmt: Formats 
- * @i: List of arguments
+ * get_size - Calculates the size to cast the argument
+ * @format: Formatted string in which to print the arguments
+ * @i: List of arguments to be printed.
  *
  * Return: Precision.
  */
-int size(const char *frmt, int *i)
+int get_size(const char *format, int *i)
 {
-	int c = *i + 1;
-	int s = 0;
+	int curr_i = *i + 1;
+	int size = 0;
 
-	if (frmt[c] == 'l')
-		s = S_LONG;
-	else if (frmt[c] == 'h')
-		s = S_SHORT;
+	if (format[curr_i] == 'l')
+		size = S_LONG;
+	else if (format[curr_i] == 'h')
+		size = S_SHORT;
 
-	if (s == 0)
-		*i = c - 1;
+	if (size == 0)
+		*i = curr_i - 1;
 	else
-		*i = c
+		*i = curr_i;
 
-	return (s);
+	return (size);
 }
-
->>>>>>> 544e8e663ee275ea50b6ede730a386beded26b4e
