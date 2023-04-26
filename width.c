@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * width- gets width for
+ * get_width- gets width for
  * @fmt: Formats
  * @i: List of arguments 
  * @list: list 
  *
  * Return: width.
  */
-int width(const char *fmt, int *i, va_list list)
+int get_width(const char *fmt, int *i, va_list list)
 {
 	int curr_i;
 	int w = 0;
